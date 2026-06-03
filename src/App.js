@@ -1,4 +1,7 @@
+
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./login";
 import logo from "./assets/logo.png";
 
 function Register() {
@@ -22,15 +25,17 @@ function Register() {
         }}
       >
         {/* Left Section */}
-        <img
-  src={logo}
-  alt="Logo"
-  style={{
-    width: "200px",
-    height: "auto",
-    textAlign: "top",
-  }}
-/>
+       <div style={{ textAlign: "center" }}>
+  <img
+    src={logo}
+    alt="Logo"
+    style={{
+      width: "200px",
+      height: "auto",
+      marginBottom: "20px",
+    }}
+  />
+</div>
         <div
           style={{
             width: "50%",
@@ -42,17 +47,17 @@ function Register() {
           </h1>
 
           <p
-            style={{
-              fontSize: "22px",
-              lineHeight: "1.6",
-              marginBottom: "40px",
-            }}
-          >
-            Join our learning platform and build skills needed for the
-            digital future. This course is designed to provide a strong
-            foundation in programming, algorithms, data structures and
-            software development.
-          </p>
+    style={{
+      fontSize: "18px",
+      lineHeight: "1.6",
+      marginBottom: "30px",
+    }}
+  >
+    Join our learning platform and build skills needed for the
+    digital future. This course is designed to provide a strong
+    foundation in programming and software development.
+  </p>
+
 
           <button
             style={{
@@ -172,7 +177,19 @@ function Register() {
         </div>
       </div>
     </div>
+    
   );
 }
 
-export default Register;
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
