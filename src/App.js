@@ -1,96 +1,178 @@
-import { useState } from "react";
+import React from "react";
 
-function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-
-    if (!email || !password) {
-      setError("Please fill all fields");
-      return;
-    }
-
-    setError("");
-    alert("Login Successful");
-  };
-
+function Register() {
   return (
-    <div style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height: "100vh",
-      backgroundColor: "#f4f4f4"
-    }}>
-      <form
-        onSubmit={handleLogin}
+    <div
+      style={{
+        backgroundColor: "#2f7f74",
+        minHeight: "100vh",
+        padding: "30px",
+      }}
+    >
+      <div
         style={{
-          background: "white",
-          padding: "30px",
-          borderRadius: "10px",
-          boxShadow: "0 4px 10px gray",
-          width: "300px"
+          backgroundColor: "#e9f0f1",
+          width: "90%",
+          maxWidth: "1100px",
+          margin: "auto",
+          display: "flex",
+          justifyContent: "space-between",
+          padding: "40px",
         }}
       >
-        <h2 style={{ textAlign: "center" }}>
-          Student Learning Platform
-        </h2>
+        {/* Left Section */}
+        <img
+  src="/logo.png"
+  alt="SkandaLab Logo"
+  style={{
+    width: "220px",
+    height: "auto",
+    marginBottom: "20px",
+  }}
 
-        <input
-          type="email"
-          placeholder="Enter Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          style={{
-            width: "100%",
-            padding: "10px",
-            borderRadius: "10px",
-            boxShadow: "0 4px 10px gray",
-            marginBottom: "10px"
-          }}
-        />
-
-        <input
-          type="password"
-          placeholder="Enter Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          style={{
-            width: "100%",
-            padding: "10px",
-            borderRadius: "10px",
-            boxShadow: "0 4px 10px gray",
-            marginBottom: "10px"
-          }}
-        />
-
-        {error && (
-          <p style={{ color: "red" }}>{error}</p>
-        )}
-
-        <button
-          type="submit"
+/>
+        <div
           style={{
             width: "50%",
-            padding: "10px",
-            backgroundColor: "black",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            boxShadow: "0 4px 10px gray",
-            margin: "20px auto",
-            display: "block",
-            cursor: "pointer"
+            textAlign: "center",
           }}
         >
-          Login
-        </button>
-      </form>
+          <h1 style={{ marginBottom: "30px" }}>
+            REGISTER TO OUR COURSE
+          </h1>
+
+          <p
+            style={{
+              fontSize: "22px",
+              lineHeight: "1.6",
+              marginBottom: "40px",
+            }}
+          >
+            Join our learning platform and build skills needed for the
+            digital future. This course is designed to provide a strong
+            foundation in programming, algorithms, data structures and
+            software development.
+          </p>
+
+          <button
+            style={{
+              backgroundColor: "black",
+              color: "white",
+              border: "none",
+              padding: "12px 30px",
+              borderRadius: "5px",
+              cursor: "pointer",
+            }}
+          >
+            Get Started
+          </button>
+        </div>
+
+        {/* Right Section */}
+        <div
+          style={{
+            width: "40%",
+            backgroundColor: "#1a1717",
+            color: "white",
+            padding: "30px",
+          }}
+        >
+          <h2 style={{ marginBottom: "20px" }}>
+            📖 REGISTER HERE
+          </h2>
+
+          <form>
+            <input
+              type="text"
+              placeholder="Enter full name"
+              style={{
+                width: "100%",
+                padding: "12px",
+                marginBottom: "20px",
+                border: "none",
+                borderBottom: "2px solid white",
+                background: "transparent",
+                color: "white",
+              }}
+            />
+
+            <input
+              type="text"
+              placeholder="Email"
+              style={{
+                width: "100%",
+                padding: "12px",
+                marginBottom: "20px",
+                border: "none",
+                borderBottom: "2px solid white",
+                background: "transparent",
+                color: "white",
+              }}
+            />
+
+            <input
+              type="text"
+              placeholder="Phone Number"
+              style={{
+                width: "100%",
+                padding: "12px",
+                marginBottom: "20px",
+                border: "none",
+                borderBottom: "2px solid white",
+                background: "transparent",
+                color: "white",
+              }}
+            />
+
+            <input
+              type="password"
+              placeholder="Password"
+              style={{
+                width: "100%",
+                padding: "12px",
+                marginBottom: "20px",
+                border: "none",
+                borderBottom: "2px solid white",
+                background: "transparent",
+                color: "white",
+              }}
+            />
+
+            <select
+              style={{
+                width: "100%",
+                padding: "12px",
+                marginBottom: "20px",
+              }}
+            >
+              <option>Select Course</option>
+              <option>Full Stack Development</option>
+              <option>UI/UX Design</option>
+              <option>Python</option>
+              <option>C++</option>
+            </select>
+
+            <button
+              type="submit"
+              style={{
+                width: "90px",
+                padding: "12px",
+                backgroundColor: "#6c63ff",
+                color: "white",
+                border: "none",
+                borderRadius: "5px",
+                display: "block ",      
+                margin: "20px auto",
+                cursor: "pointer",
+              }}
+            >
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default Login;
+export default Register;

@@ -70,11 +70,13 @@ function Login() {
         <button
           type="submit"
           style={{
-            width: "100%",
+            width: "50%",
             padding: "10px",
             backgroundColor: "blue",
             color: "white",
             border: "none",
+            display: "block",        
+            margin: "20px auto",
             cursor: "pointer"
           }}
         >
