@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "./assets/logo.png";
 
 function Register() {
   return (
@@ -22,14 +23,13 @@ function Register() {
       >
         {/* Left Section */}
         <img
-  src="/logo.png"
-  alt="SkandaLab Logo"
+  src={logo}
+  alt="Logo"
   style={{
-    width: "220px",
+    width: "200px",
     height: "auto",
-    marginBottom: "20px",
+    textAlign: "top",
   }}
-
 />
         <div
           style={{
